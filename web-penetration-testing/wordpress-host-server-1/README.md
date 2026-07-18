@@ -58,6 +58,8 @@ Host discovery was performed using:
 nmap 192.168.198.0/24 -sn
 ```
 
+![Network and Host Discovery](Screenshot%202026-07-18%20052956.png)
+
 The target machine was identified as:
 
 ```text
@@ -102,6 +104,8 @@ The website was fingerprinted using:
 ```bash
 whatweb http://www.armourinfosec.test
 ```
+
+![Domain Mapping and WhatWeb Result](Screenshot%202026-07-18%20053035.png)
 
 The following technologies were identified:
 
