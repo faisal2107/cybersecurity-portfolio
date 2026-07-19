@@ -1,0 +1,55 @@
+┌──(kali㉿kali)-[~]
+└─$ gobuster dir -u http://www.armourinfosec.test -w /usr/share/wordlists/dirb/common.txt -x php,html,txt -t 10                               
+===============================================================
+Gobuster v3.8
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://www.armourinfosec.test
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8
+[+] Extensions:              html,txt,php
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/.hta                 (Status: 403) [Size: 206]
+/.hta.php             (Status: 403) [Size: 210]
+/.hta.txt             (Status: 403) [Size: 210]
+/.htaccess.html       (Status: 403) [Size: 216]
+/.hta.html            (Status: 403) [Size: 211]
+/.htaccess.txt        (Status: 403) [Size: 215]
+/.htaccess.php        (Status: 403) [Size: 215]
+/.htaccess            (Status: 403) [Size: 211]
+/.htpasswd.php        (Status: 403) [Size: 215]
+/.htpasswd            (Status: 403) [Size: 211]
+/.htpasswd.html       (Status: 403) [Size: 216]
+/.htpasswd.txt        (Status: 403) [Size: 215]
+/cgi-bin/             (Status: 403) [Size: 210]
+/cgi-bin/.html        (Status: 403) [Size: 215]
+/license.txt          (Status: 200) [Size: 19935]
+/readme.html          (Status: 200) [Size: 7368]
+/index.php            (Status: 301) [Size: 0] [--> http://www.armourinfosec.test/]
+/index.php            (Status: 301) [Size: 0] [--> http://www.armourinfosec.test/]
+/wp-admin             (Status: 301) [Size: 247] [--> http://www.armourinfosec.test/wp-admin/]
+/wp-content           (Status: 301) [Size: 249] [--> http://www.armourinfosec.test/wp-content/]
+/wp-includes          (Status: 301) [Size: 250] [--> http://www.armourinfosec.test/wp-includes/]
+/wp-settings.php      (Status: 500) [Size: 0]
+/wp-config.php        (Status: 200) [Size: 0]
+/wp-blog-header.php   (Status: 200) [Size: 0]
+/wp-mail.php          (Status: 403) [Size: 2709]
+/wp-login.php         (Status: 302) [Size: 0] [--> https://www.armourinfosec.test/wp-login.php]
+/wp-signup.php        (Status: 302) [Size: 0] [--> https://www.armourinfosec.test/wp-login.php?action=register]
+/wp-cron.php          (Status: 200) [Size: 0]
+/wp-trackback.php     (Status: 200) [Size: 135]
+/wp-links-opml.php    (Status: 200) [Size: 229]
+/wp-load.php          (Status: 200) [Size: 0]
+/xmlrpc.php           (Status: 405) [Size: 42]
+/xmlrpc.php           (Status: 405) [Size: 42]
+Progress: 18452 / 18452 (100.00%)
+===============================================================
+Finished
+===============================================================
+                                                                  

