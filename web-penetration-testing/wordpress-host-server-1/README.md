@@ -128,6 +128,8 @@ ffuf -u http://www.armourinfosec.test/FUZZ \
 -t 10
 ```
 
+[View the full FFUF results](ffuf-results.txt)
+
 Gobuster was also used for comparison:
 
 ```bash
@@ -137,6 +139,8 @@ gobuster dir \
 -x php,html,txt \
 -t 10
 ```
+
+[View the full Gobuster results](gobuster-results.txt)
 
 Important findings included:
 
@@ -161,6 +165,8 @@ wpscan --url "https://www.armourinfosec.test" \
 -e u,ap,at,dbe
 ```
 
+[View the full WPScan enumeration results](wpscan-enumeration.txt)
+
 WPScan identified:
 
 - WordPress version `5.3.2`
@@ -182,6 +188,8 @@ wpscan --url "https://www.armourinfosec.test" \
 ```
 
 WPScan tested the passwords from the wordlist and successfully identified a valid username and password combination.
+
+[View the redacted WPScan brute-force results](wpscan-bruteforce-redacted.txt)
 
 The discovered credential was then used to log in successfully to the WordPress administration panel.
 
