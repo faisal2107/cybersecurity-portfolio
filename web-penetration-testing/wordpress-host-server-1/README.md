@@ -36,7 +36,8 @@ The goal was to understand the workflow from host discovery to WordPress enumera
 10. Prepared a password wordlist for authentication testing.
 11. Used WPScan to test multiple passwords against the identified username.
 12. WPScan identified a valid username and password combination.
-13. Successfully logged in to the WordPress administration panel.
+13. Accessed the WordPress login page through `/wp-login.php`.
+14. Successfully logged in to the WordPress administration panel.
 
 ## Network Discovery
 
@@ -191,7 +192,21 @@ WPScan tested the passwords from the wordlist and successfully identified a vali
 
 [View the redacted WPScan brute-force results](wpscan-bruteforce-redacted.txt)
 
-The discovered credential was then used to log in successfully to the WordPress administration panel.
+## WordPress Login Page
+
+The WordPress login page was accessed through the following path:
+
+```text
+https://www.armourinfosec.test/wp-login.php
+```
+
+The username and password identified by WPScan were entered into the WordPress login form.
+
+After successful authentication, access to the WordPress administration panel was confirmed through:
+
+```text
+https://www.armourinfosec.test/wp-admin/
+```
 
 The password is intentionally excluded from this public write-up.
 
@@ -203,6 +218,7 @@ The password is intentionally excluded from this public write-up.
 - WordPress username identified: `bob`
 - Multiple outdated plugins and themes were detected.
 - WPScan successfully discovered a valid password through wordlist-based brute-force testing.
+- The WordPress login page was accessible through `/wp-login.php`.
 - Successful access to the WordPress administration panel was confirmed.
 
 ## What I Learned
@@ -212,11 +228,13 @@ The password is intentionally excluded from this public write-up.
 - How to configure `/etc/hosts` for a local domain.
 - How to fingerprint a website using WhatWeb.
 - How to enumerate directories using FFUF and Gobuster.
+- How to identify the WordPress login path.
 - How to enumerate WordPress users, themes, and plugins using WPScan.
 - How to perform a wordlist-based password brute-force attack using WPScan.
 - How WPScan tests multiple passwords against an identified WordPress username.
 - How to interpret the `Valid Combinations Found` result.
-- How to verify the discovered credentials through the WordPress login page.
+- How to verify discovered credentials through `/wp-login.php`.
+- How to access the WordPress administration panel through `/wp-admin/`.
 
 ## Disclaimer
 
