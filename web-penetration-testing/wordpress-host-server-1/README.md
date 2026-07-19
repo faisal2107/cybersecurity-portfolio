@@ -207,6 +207,7 @@ After successful authentication, access to the WordPress administration panel wa
 ```text
 https://www.armourinfosec.test/wp-admin/
 ```
+![Successful WordPress Login](wordpress-login-success.png)
 
 The password is intentionally excluded from this public write-up.
 
